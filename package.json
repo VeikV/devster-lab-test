@@ -1,0 +1,19 @@
+{
+  "name": "devster-lab-test",
+  "version": "0.0.1",
+  "description": "Test task for devster-labe",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VeikV/devster-lab-test.git"
+  },
+  "author": "nika",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/VeikV/devster-lab-test/issues"
+  },
+  "homepage": "https://github.com/VeikV/devster-lab-test#readme"
+}
