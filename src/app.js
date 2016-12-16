@@ -1,1 +1,4 @@
-const b = 5;
+import $ from 'jquery';
+import bootstrap from './bootstrap';
+
+bootstrap();
