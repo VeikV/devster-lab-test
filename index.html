@@ -6,64 +6,78 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/css/bootstrap-flex.min.css">
 </head>
 <body>
-
-<div data-components="Users" class="users">
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-        Launch demo modal
-    </button>
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                </div>
-                <div class="modal-body">
-                    <form class="users__create">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Name">
-                        </div>
-                        <div class="form-group">
-                            <label for="username">Username</label>
-                            <input type="text" name="username" class="form-control" id="username" placeholder="Username">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email address</label>
-                            <input type="email" name="email" class="form-control" id="email" placeholder="Email">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone</label>
-                            <input type="text" name="phone" class="form-control" id="phone" placeholder="Phone">
-                        </div>
-                        <div class="form-group">
-                            <label for="website">Website</label>
-                            <input type="text" name="website" class="form-control" id="website" placeholder="Website">
-                        </div>
-                        <div class="form-group">
-                            <label for="company.name">Company</label>
-                            <input type="text" name="company.name" class="form-control" id="company.name" placeholder="Company">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default users__clear" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary users__submit">Save changes</button>
+<div class="container">
+    <div data-components="Users" class="users">
+        <div>
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                Add user
+            </button>
+        </div>
+        <br />
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Create new user</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="users__create">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" name="username" class="form-control" id="username" placeholder="Username">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email address</label>
+                                <input type="email" name="email" class="form-control" id="email" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="text" name="phone" class="form-control" id="phone" placeholder="Phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="website">Website</label>
+                                <input type="text" name="website" class="form-control" id="website" placeholder="Website">
+                            </div>
+                            <div class="form-group">
+                                <label for="company.name">Company</label>
+                                <input type="text" name="company.name" class="form-control" id="company.name" placeholder="Company">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default users__clear" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary users__submit">Save changes</button>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-xs">
+                <input type="text" class="users__query" placeholder="search" />
+            </div>
+            <div class="col-xs">
+                <select class="users__sort">
+                    <option selected value="name">Name</option>
+                    <option value="username">Username</option>
+                    <option value="email">Email</option>
+                    <option value="address.street">Street</option>
+                    <option value="company.name">Company</option>
+                </select>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-xs">
+                <ul class="users__list"></ul>
+            </div>
+        </div>
     </div>
-    <input type="text" class="users__query" />
-    <select class="users__sort">
-        <option selected value="name">Name</option>
-        <option value="username">Username</option>
-        <option value="email">Email</option>
-        <option value="address.street">Street</option>
-        <option value="company.name">Company</option>
-    </select>
-    <ul class="users__list"></ul>
 </div>
-
 <script
         src="https://code.jquery.com/jquery-3.1.1.js"
         integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
