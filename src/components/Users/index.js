@@ -71,6 +71,8 @@ export default class Users {
                 },
                 unhighlight: element => {
                     $(element).parent().removeClass('has-danger');
+
+                    this.elements.$root.find('.users__submit').prop('disabled', !!this.elements.$form.data('validator').numberOfInvalids());
                 }
             });
         });
@@ -97,7 +99,7 @@ export default class Users {
     };
 
     filterUsers() {
-        const queryUsers = this.users.filter(user => user.name.toLowerCase().includes(this.query) || user.email.includes(this.query) || user.username.includes(this.query));;
+        const queryUsers = this.users.filter(user => user.name.includes(this.query) || user.email.includes(this.query) || user.username.includes(this.query));;
         const users = queryUsers.sort((user, nextUser) => get(user, this.sort) > get(nextUser, this.sort));
 
         this.render(users);
@@ -134,6 +136,8 @@ export default class Users {
             this.users.push(newUser);
             this.filterUsers();
 
+            this.elements.$form.data('validator').resetForm();
+            this.elements.$form[0].reset();
             this.elements.$root.find('#myModal').modal('hide');
         }
     };
